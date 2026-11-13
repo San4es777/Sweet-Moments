@@ -7,10 +7,10 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-enum ProductKind { STANDARD CUSTOM }
-enum OrderStatus { NEW WAITING_FOR_PAYMENT CONFIRMED IN_PROGRESS READY COMPLETED CANCELLED }
-enum PaymentStatus { UNPAID DEPOSIT PAID REFUNDED }
-enum FulfillmentType { PICKUP DELIVERY }
+enum ProductKind {\n  STANDARD\n  CUSTOM\n}
+enum OrderStatus {\n  NEW\n  WAITING_FOR_PAYMENT\n  CONFIRMED\n  IN_PROGRESS\n  READY\n  COMPLETED\n  CANCELLED\n}
+enum PaymentStatus {\n  UNPAID\n  DEPOSIT\n  PAID\n  REFUNDED\n}
+enum FulfillmentType {\n  PICKUP\n  DELIVERY\n}
 
 model Admin {
   id        String   @id @default(cuid())
