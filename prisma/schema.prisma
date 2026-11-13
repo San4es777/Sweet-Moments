@@ -1,0 +1,100 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum ProductKind { STANDARD CUSTOM }
+enum OrderStatus { NEW WAITING_FOR_PAYMENT CONFIRMED IN_PROGRESS READY COMPLETED CANCELLED }
+enum PaymentStatus { UNPAID DEPOSIT PAID REFUNDED }
+enum FulfillmentType { PICKUP DELIVERY }
+
+model Admin {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String
+  createdAt DateTime @default(now())
+}
+
+model Category {
+  id       String    @id @default(cuid())
+  name     String    @unique
+  slug     String    @unique
+  products Product[]
+}
+
+model Product {
+  id          String      @id @default(cuid())
+  name        String
+  slug        String      @unique
+  description String
+  kind        ProductKind @default(STANDARD)
+  price       Int?
+  unit        String?
+  active      Boolean     @default(true)
+  featured    Boolean     @default(false)
+  imageUrl    String?
+  categoryId  String
+  category    Category    @relation(fields: [categoryId], references: [id])
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  orderItems  OrderItem[]
+}
+
+model Order {
+  id              String           @id @default(cuid())
+  orderNumber     String           @unique
+  customerName    String
+  phone           String
+  email           String?
+  fulfillment     FulfillmentType
+  address         String?
+  desiredDate     DateTime
+  status          OrderStatus      @default(NEW)
+  paymentStatus   PaymentStatus    @default(UNPAID)
+  subtotal        Int
+  deliveryFee     Int               @default(0)
+  total           Int
+  customerNote    String?
+  isCustom        Boolean           @default(false)
+  customBrief     Json?
+  items           OrderItem[]
+  payments        Payment[]
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+}
+
+model OrderItem {
+  id        String  @id @default(cuid())
+  orderId   String
+  order     Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId String?
+  product   Product? @relation(fields: [productId], references: [id], onDelete: SetNull)
+  name      String
+  unitPrice Int?
+  quantity  Int
+  lineTotal Int?
+  note      String?
+}
+
+model Payment {
+  id          String   @id @default(cuid())
+  orderId     String
+  order       Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  provider    String
+  providerRef String?  @unique
+  amount      Int
+  status      String
+  createdAt   DateTime @default(now())
+}
+
+model ProductionDay {
+  id            String   @id @default(cuid())
+  date          DateTime @unique
+  isBlocked     Boolean  @default(false)
+  maxOrders     Int      @default(3)
+  note          String?
+}
