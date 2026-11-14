@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" role="img" aria-label="Sweet Moments patisserie illustration">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8e9df"/><stop offset="1" stop-color="#ead0c4"/></linearGradient><linearGradient id="cake" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fffaf3"/><stop offset="1" stop-color="#e9c8b9"/></linearGradient></defs>
+<rect width="900" height="700" fill="url(#bg)"/><circle cx="730" cy="130" r="90" fill="#fff8ef" opacity=".35"/><ellipse cx="450" cy="565" rx="260" ry="42" fill="#b9897d" opacity=".18"/>
+<path d="M235 350 Q450 300 665 350 L630 525 Q450 575 270 525Z" fill="url(#cake)" stroke="#c99c8e" stroke-width="7"/>
+<ellipse cx="450" cy="350" rx="215" ry="65" fill="#fffaf4" stroke="#c99c8e" stroke-width="7"/>
+<path d="M270 355 Q310 410 345 355 T420 355 T495 355 T570 355 T630 355" fill="none" stroke="#d7a99b" stroke-width="13" stroke-linecap="round"/>
+<g fill="#b95f69"><circle cx="370" cy="300" r="26"/><circle cx="450" cy="278" r="30"/><circle cx="530" cy="302" r="25"/></g><g fill="#fff4e8"><path d="M355 292q15-36 30 0q-15 24-30 0M435 268q15-38 30 0q-15 24-30 0M515 294q15-35 30 0q-15 24-30 0"/></g>
+<text x="450" y="635" text-anchor="middle" fill="#80594c" font-family="Georgia,serif" font-size="31" font-style="italic">Sweet Moments</text><text x="450" y="665" text-anchor="middle" fill="#9b786b" font-family="Arial,sans-serif" font-size="13" letter-spacing="5">HOMEMADE PATISSERIE · ODESA</text></svg>
