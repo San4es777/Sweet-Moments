@@ -586,7 +586,7 @@
 }
 .hero-art{
   position:absolute!important;inset:0!important;width:100%!important;height:100%!important;
-  margin:0!important;border-radius:0!important;overflow:hidden!important;z-index:-1!important;
+  margin:0!important;border-radius:0!important;overflow:hidden!important;z-index:0!important;
   background:#8b5547!important;box-shadow:none!important;
 }
 .hero-art:after{
