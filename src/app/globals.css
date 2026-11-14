@@ -296,3 +296,139 @@
 
 /* Keep the accordion plus/minus control in normal document flow */
 .idea-toggle-label span{position:static;left:auto;bottom:auto;display:inline;line-height:1}
+
+
+/* Mobile layout hardening — keep every homepage section in normal flow */
+@media (max-width: 760px) {
+  .hero {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-areas: "photo" "copy" !important;
+    align-items: stretch !important;
+    gap: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 10px auto 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    position: relative !important;
+    isolation: isolate;
+  }
+  .hero-art {
+    grid-area: photo !important;
+    position: relative !important;
+    inset: auto !important;
+    float: none !important;
+    width: 100% !important;
+    min-height: 250px !important;
+    height: clamp(250px, 72vw, 330px) !important;
+    margin: 0 !important;
+    transform: none !important;
+    border-radius: 18px 18px 0 0 !important;
+    overflow: hidden !important;
+  }
+  .hero-cake-photo {
+    position: absolute !important;
+    inset: 0 !important;
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    transform: none !important;
+  }
+  .hero-copy {
+    grid-area: copy !important;
+    position: relative !important;
+    inset: auto !important;
+    float: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 22px 18px 24px !important;
+    transform: none !important;
+    z-index: 1 !important;
+  }
+  .hero-highlights {
+    position: static !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 7px !important;
+    margin: 14px 0 0 !important;
+  }
+  .hero-highlights span { white-space: normal !important; }
+  .actions {
+    position: static !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 9px !important;
+    margin: 17px 0 0 !important;
+  }
+  .hero-note {
+    position: static !important;
+    margin: 14px 0 0 !important;
+  }
+  .benefits {
+    position: relative !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    float: none !important;
+    clear: both !important;
+    width: calc(100% - 32px) !important;
+    height: auto !important;
+    margin: 18px auto 8px !important;
+    transform: none !important;
+  }
+  .category-showcase {
+    position: relative !important;
+    display: block !important;
+    float: none !important;
+    clear: both !important;
+    inset: auto !important;
+    width: calc(100% - 32px) !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 24px auto 34px !important;
+    padding: 18px 0 0 !important;
+    transform: none !important;
+    overflow: visible !important;
+    z-index: 0 !important;
+  }
+  .category-heading {
+    position: static !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: end !important;
+    justify-content: space-between !important;
+    gap: 10px !important;
+    margin: 0 0 15px !important;
+  }
+  .category-tiles {
+    position: static !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    transform: none !important;
+  }
+  .category-tiles > a {
+    position: relative !important;
+    display: block !important;
+    float: none !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: 1.12 / 1 !important;
+    margin: 0 !important;
+    transform: none !important;
+  }
+  .category-tiles > a:last-child {
+    grid-column: 1 / -1 !important;
+    aspect-ratio: 2.2 / 1 !important;
+  }
+}
