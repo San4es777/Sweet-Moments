@@ -293,3 +293,6 @@
 .idea-cta{width:100%;font-size:11px;padding:12px 14px}
 @keyframes ideaReveal{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:760px){.idea-image{height:175px}.idea-title{font-size:16px;left:12px;bottom:12px}.idea-toggle-label{padding:11px 12px;font-size:11px}.idea-details{padding:0 12px 13px}.idea-details>p{font-size:12px}.idea-details ul{font-size:10px}.idea-cta{font-size:10px}}
+
+/* Keep the accordion plus/minus control in normal document flow */
+.idea-toggle-label span{position:static;left:auto;bottom:auto;display:inline;line-height:1}
