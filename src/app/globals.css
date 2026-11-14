@@ -432,3 +432,145 @@
     aspect-ratio: 2.2 / 1 !important;
   }
 }
+
+
+/* Hero refinement — warm text-first mobile composition */
+@media (max-width: 760px) {
+  .hero {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    width: calc(100% - 24px) !important;
+    margin: 12px auto 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    border: 1px solid #f0dfd3 !important;
+    border-radius: 22px !important;
+    background: linear-gradient(145deg, #fffaf5 0%, #f9e8e1 100%) !important;
+    box-shadow: 0 14px 36px #713b3010 !important;
+  }
+
+  .hero-copy {
+    order: 0 !important;
+    width: 100% !important;
+    padding: 27px 21px 23px !important;
+    text-align: left !important;
+  }
+
+  .hero-copy > .eyebrow {
+    font-size: 9px !important;
+    letter-spacing: 1.7px !important;
+    margin: 0 0 12px !important;
+  }
+
+  .hero h1 {
+    max-width: 100% !important;
+    font-size: clamp(35px, 8.7vw, 42px) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.8px !important;
+    margin: 0 0 13px !important;
+  }
+
+  .hero h1 em {
+    color: #b96f69 !important;
+  }
+
+  .hero-copy > p:not(.eyebrow) {
+    max-width: 34em !important;
+    margin: 0 !important;
+    color: #76594c !important;
+    font-size: 13px !important;
+    line-height: 1.7 !important;
+  }
+
+  .hero-highlights {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 7px !important;
+    margin: 16px 0 0 !important;
+  }
+
+  .hero-highlights span {
+    min-height: 0 !important;
+    padding: 7px 10px !important;
+    border: 1px solid #ead6cc !important;
+    border-radius: 30px !important;
+    background: #fffaf5b8 !important;
+    color: #805d50 !important;
+    font-size: 9px !important;
+    line-height: 1.35 !important;
+  }
+
+  .actions {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 9px !important;
+    margin: 18px 0 0 !important;
+  }
+
+  .actions .btn,
+  .actions .text-link {
+    width: 100% !important;
+    min-height: 45px !important;
+    justify-content: center !important;
+    text-align: center !important;
+    border-radius: 9px !important;
+    font-size: 12px !important;
+  }
+
+  .actions .text-link {
+    padding: 10px !important;
+  }
+
+  .hero-note {
+    margin: 13px 0 0 !important;
+    font-size: 10px !important;
+    color: #8b7165 !important;
+  }
+
+  .hero-art {
+    order: 1 !important;
+    width: calc(100% - 28px) !important;
+    height: clamp(225px, 62vw, 285px) !important;
+    min-height: 0 !important;
+    margin: 0 14px 14px !important;
+    border-radius: 15px 15px 42px 15px !important;
+    overflow: hidden !important;
+    box-shadow: 0 10px 24px #713b301c !important;
+  }
+
+  .hero-cake-photo {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center 48% !important;
+  }
+
+  .hero-photo-badge {
+    width: 76px !important;
+    height: 76px !important;
+    right: 12px !important;
+    top: 12px !important;
+    font-size: 9px !important;
+  }
+
+  .hero-floating-heart {
+    font-size: 48px !important;
+    top: 13% !important;
+    left: 8% !important;
+  }
+
+  .hero-caption {
+    right: 13px !important;
+    bottom: 12px !important;
+    font-size: 7px !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .hero-copy { padding: 23px 17px 20px !important; }
+  .hero h1 { font-size: 34px !important; }
+  .hero-art { height: 225px !important; }
+}
