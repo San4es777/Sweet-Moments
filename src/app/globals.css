@@ -228,3 +228,18 @@
  .category-tiles>a{aspect-ratio:1.08/1!important}
  .product-art{max-height:165px!important}
 }
+
+
+/* Phase 1 polish: category consistency, resilient images and mobile tile rhythm */
+.category-tiles>a{min-width:0}
+.product-art{background:#f0e2d8}
+.product-art img,.category-tiles img{background:#f0e2d8}
+@media(max-width:760px){
+ .category-tiles>a:last-child{grid-column:1/-1;aspect-ratio:2.35/1!important}
+ .category-tiles>a:last-child img{object-position:center 42%}
+ .product-grid{align-items:stretch}
+ .product{display:flex;flex-direction:column}
+ .product-body{display:flex;flex:1;flex-direction:column}
+ .product-body .muted{flex:1}
+ .product-foot{margin-top:14px}
+}
